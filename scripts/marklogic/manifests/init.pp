@@ -2,6 +2,8 @@
 class marklogic (
 ) {
 
+
+# Check if MarkLogic is installed, install if not
   package { "MarkLogic":
       ensure => "installed",
       provider => "rpm",
@@ -9,7 +11,7 @@ class marklogic (
   }
 
 
-# 
+# Check if MarkLogic service is running, start if not
 # hasrestart — Whether to use the init script’s restart command instead of stop+start. 
 # hasstatus — Whether to use the init script’s status command instead of grepping the process table. 
 
