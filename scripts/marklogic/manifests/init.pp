@@ -13,7 +13,7 @@ class marklogic (
   # TODO: source is fetching from puppet master, change to specify hostname
   package { 'MarkLogic':
     ensure => present,
-    provider => "rpm",
+    provider => "yum",
     require => File["/tmp/${ml_install_file}"],
     source => File["/tmp/${ml_install_file}"],
   }
