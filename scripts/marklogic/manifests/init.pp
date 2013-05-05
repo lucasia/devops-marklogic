@@ -4,10 +4,11 @@ class marklogic (
 
 
 # Check if MarkLogic is installed, install if not
+# puppet:/// will fetch from the puppet master
   package { 'MarkLogic':
       ensure => present,
       provider => "rpm",
-      source => "puppet://localhost/modules/marklogic/MarkLogic-6.0-2.3.x86_64.rpm",
+      source => "puppet:///marklogic/MarkLogic-6.0-2.3.x86_64.rpm",
   }
 
 
