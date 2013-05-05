@@ -4,7 +4,7 @@ class marklogic (
 
 
 # Check if MarkLogic is installed, install if not
-  package { "MarkLogic":
+  package { 'MarkLogic':
       ensure => present,
       provider => "rpm",
       source => "puppet://localhost/modules/marklogic/MarkLogic-6.0-2.3.x86_64.rpm",
@@ -20,7 +20,7 @@ class marklogic (
     enable     => true,
     hasrestart => true,
     hasstatus  => false,
-    require => Package['MarkLogic']
+    require => Package['MarkLogic'],
   }
 
   
