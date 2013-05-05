@@ -3,8 +3,7 @@ class marklogic (
     $ml_install_file = "MarkLogic-6.0-2.3.x86_64.rpm"
 ) {
 
-  file {"${ml_install_file}":
-    path   => "/tmp/${ml_install_file}",
+  file {"/tmp/${ml_install_file}":
     ensure => present,
     source => "puppet:///modules/marklogic/${ml_install_file}",
   }
@@ -15,8 +14,8 @@ class marklogic (
   package { 'MarkLogic':
     ensure => present,
     provider => "rpm",
-    require => File["${ml_install_file}"],
-    source => File["${ml_install_file}"],
+    require => File["/tmp/${ml_install_file}"],
+    source => File["/tmp/${ml_install_file}"],
   }
 
 
