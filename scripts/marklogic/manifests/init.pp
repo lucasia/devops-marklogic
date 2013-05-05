@@ -4,11 +4,11 @@ class marklogic (
 
 
 # Check if MarkLogic is installed, install if not
-# TODO: change to specify hostname
+# TODO: source is fetching from puppet master, change to specify hostname
   package { 'MarkLogic':
       ensure => present,
       provider => "rpm",
-      source => "puppet://localhost/marklogic/MarkLogic-6.0-2.3.x86_64.rpm",
+      source => "puppet:///modules/marklogic/MarkLogic-6.0-2.3.x86_64.rpm",
   }
 
 
