@@ -8,7 +8,7 @@ class marklogic (
   package { 'MarkLogic':
       ensure => present,
       provider => "rpm",
-      source => "puppet:///modules/marklogic/MarkLogic-6.0-2.3.x86_64.rpm",
+      source => "http://developer.marklogic.com/download/binaries/6.0/MarkLogic-6.0-3.x86_64.rpm",
   }
 
 
