@@ -20,7 +20,7 @@ class marklogic (
     enable     => true,
     hasrestart => true,
     hasstatus  => false,
-    require => Package['Marklogic']
+    require => Package['MarkLogic']
   }
 
   
