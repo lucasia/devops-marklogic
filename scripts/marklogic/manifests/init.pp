@@ -1,5 +1,6 @@
 # TODO: change MarkLogic service to specify restart and status rather than puppet defaults
 class marklogic (
+    $ml_pkg_name = "MarkLogic.x86_64",
     $ml_install_file = "MarkLogic-6.0-2.3.x86_64.rpm"
 ) {
 
@@ -12,10 +13,11 @@ class marklogic (
   # Check if MarkLogic is installed, install if not
   # TODO: source is fetching from puppet master, change to specify hostname
   package { 'MarkLogic':
-    ensure => present,
+    name     => $ml_pkg_name,
+    ensure   => present,
     provider => "yum",
-    require => File["/tmp/${ml_install_file}"],
-    source => File["/tmp/${ml_install_file}"],
+    require  => File["/tmp/${ml_install_file}"],
+    source   => File["/tmp/${ml_install_file}"],
   }
 
 
